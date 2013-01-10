@@ -1,4 +1,3 @@
 catch-phrase
 ============
 
-group game
