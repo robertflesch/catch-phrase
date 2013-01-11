@@ -1,18 +1,19 @@
 import sbt._
-import Keys._
 import PlayProject._
+import sbt.Keys._
 
 object ApplicationBuild extends Build {
 
-    val appName         = "catch-phrase"
-    val appVersion      = "1.0-SNAPSHOT"
+  val appVersion = "1.0-SNAPSHOT"
 
-    val appDependencies = Seq(
-      // Add your project dependencies here,
-    )
+  val scalaTest = "org.scalatest" %% "scalatest" % "1.8" % "test"
 
-    val main = PlayProject(appName, appVersion, appDependencies, mainLang = SCALA).settings(
-      // Add your own project settings here      
-    )
+  val appDependencies = Seq(
+    scalaTest
+  )
+
+  val main = PlayProject("catch-phrase", appVersion, appDependencies, mainLang = SCALA).settings(
+    testOptions in Test := Nil
+  )
 
 }
