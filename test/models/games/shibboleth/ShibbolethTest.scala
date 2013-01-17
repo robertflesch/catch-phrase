@@ -1,12 +1,12 @@
-package models.games.catchphrase
+package models.games.shibboleth
 
 import org.scalatest.FunSuite
 
 import play.api.libs.json.Json
 
-class CatchPhraseTest extends FunSuite {
+class ShibbolethTest extends FunSuite {
 
-  val scalaRepresentation = CatchPhrase("hello, world!")
+  val scalaRepresentation = Shibboleth("hello, world!")
   val jsonRepresentation = """{"phrase":"hello, world!"}"""
 
   test("Test write JSON") {
@@ -14,6 +14,6 @@ class CatchPhraseTest extends FunSuite {
   }
 
   test("Test read JSON") {
-    assert(scalaRepresentation == Json.fromJson[CatchPhrase](Json.parse(jsonRepresentation)))
+    assert(scalaRepresentation === Json.fromJson[Shibboleth](Json.parse(jsonRepresentation)))
   }
 }
