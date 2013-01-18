@@ -16,13 +16,13 @@
           <div class="navbar">
             <div class="navbar-inner">
               <ul class="nav">
-                <li class="@("active".when(nav == "home"))">
+                <li class="@(if(nav == "shibboleth") "active" else "")">
                   <a href='#'>Home</a>
                 </li>
-                <li class="@("active".when(nav == "shibboleth"))">
+                <li class="@(if(nav == "shibboleth") "active" else "")">
                   <a href='#'>Shibboleth</a>
                 </li>
-                <li class="@("active".when(nav == "charades"))">
+                <li class="@(if(nav == "charades") "active" else "")">
                   <a href='#'>Charades</a>
                 </li>
               </ul>
